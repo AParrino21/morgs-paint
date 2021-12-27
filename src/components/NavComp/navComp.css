@@ -1,0 +1,15 @@
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    width: auto !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+    font-family: 'Gruppo';
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        /* padding-right: 2.5rem !important; */
+        padding-left: 2.5rem !important; 
+    }
+}
