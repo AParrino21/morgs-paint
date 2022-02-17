@@ -1,6 +1,7 @@
 import React from 'react';
 import './navComp.css';
 import { Link, useLocation } from 'react-router-dom'
+import NavHeader from './morganNavHeader.JPG'
 
 const NavComp = () => {
 
@@ -8,6 +9,7 @@ const NavComp = () => {
 
     return (
         <div>
+            <img src={NavHeader} alt="" />
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <Link to='/' className='navbar-brand'>LOGO</Link>
