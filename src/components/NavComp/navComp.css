@@ -1,15 +1,37 @@
+.morgs-header {
+    width: 100%;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: white !important;
+}
+
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     width: auto !important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: white !important;
-    font-family: 'Gruppo';
+    color: rgb(90, 90, 90) !important;
+    /* font-family: 'Gruppo'; */
+    font-family: 'Cinzel', serif;
 }
 
-@media (min-width: 992px) {
+#bg-darker {
+    background-color: black !important;
+}
+
+@media screen and (min-width: 992px) {
     .navbar-expand-lg .navbar-nav .nav-link {
         /* padding-right: 2.5rem !important; */
         padding-left: 2.5rem !important; 
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* .navbar {
+        display: block !important;
+    } */
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        width: 100% !important;
     }
 }

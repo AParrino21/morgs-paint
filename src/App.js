@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
+import Shop from './pages/Shop';
 // import NavComp from './components/NavComp/NavComp';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/gallery' element={<Gallery />} />
+          <Route exact path='/shop' element={<Shop />} />
         </Routes>
       </Router>
     </div>

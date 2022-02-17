@@ -1,18 +1,17 @@
-import React from 'react';
-import './homeComp.css';
-import NavComp from '../NavComp/NavComp';
+import React from 'react'
+import NavComp from '../NavComp/NavComp'
 
-const HomeComp = () => {
+const ShopComp = () => {
     return (
         <div>
             <div className='nav-container'>
                 <NavComp />
             </div>
             <div>
-                Home
+                shop
             </div>
         </div>
     )
 }
 
-export default HomeComp
+export default ShopComp
