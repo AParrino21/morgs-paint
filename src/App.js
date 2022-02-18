@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import Shop from './pages/Shop';
+import Contact from './pages/Contact'
 // import NavComp from './components/NavComp/NavComp';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route exact path='/' element={<Home />} />
           <Route exact path='/gallery' element={<Gallery />} />
           <Route exact path='/shop' element={<Shop />} />
+          <Route exact path='/contact' element={<Contact />} />
         </Routes>
       </Router>
     </div>
