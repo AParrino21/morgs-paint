@@ -9,7 +9,9 @@ const NavComp = () => {
 
     return (
         <div>
-            <img className='morgs-header' src={NavHeader} alt="" />
+            <div className='morgs-header-container'>
+                <img className='morgs-header' src={NavHeader} alt="" />
+            </div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark" id='bg-darker'>
                 <div className="container-fluid">
                     {/* <Link to='/' className='navbar-brand'>LOGO</Link> */}
@@ -18,7 +20,7 @@ const NavComp = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
-                        <li className="nav-item">
+                            <li className="nav-item">
                                 <Link to='/' className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}>HOME</Link>
                             </li>
                             <li className="nav-item">

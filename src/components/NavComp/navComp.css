@@ -1,5 +1,12 @@
+.morgs-header-container {
+    width: 100%;
+    text-align: center;
+    background-color: black;
+}
+
 .morgs-header {
     width: 100%;
+    max-width: 1200px;
 }
 
 .navbar-dark .navbar-nav .nav-link.active {
