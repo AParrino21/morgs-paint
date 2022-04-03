@@ -1,0 +1,45 @@
+.shop-container {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    -webkit-animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.shop-titles {
+    cursor: pointer;
+}
+
+.shop-titles:hover {
+    color: rgb(255, 155, 172);
+    font-weight: 600;
+}
+
+.promo-container {
+    margin: 100px 0 0 0;
+    cursor: pointer;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.promo-imgs {
+    width: 70%;
+    max-width: 600px;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .shop-container {
+        display: block;
+    }
+
+    .promo-imgs {
+        width: 80%;
+    }
+}

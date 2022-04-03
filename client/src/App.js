@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import Shop from './pages/Shop';
 import Contact from './pages/Contact'
+import MixedMedia from './pages/MixedMedia';
 // import NavComp from './components/NavComp/NavComp';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route exact path='/gallery' element={<Gallery />} />
           <Route exact path='/shop' element={<Shop />} />
           <Route exact path='/contact' element={<Contact />} />
+          <Route exact path='/mixed-media' element={<MixedMedia />} />
         </Routes>
       </Router>
     </div>
