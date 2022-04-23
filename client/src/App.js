@@ -7,6 +7,7 @@ import Shop from './pages/Shop';
 import Contact from './pages/Contact'
 import MixedMedia from './pages/MixedMedia';
 // import NavComp from './components/NavComp/NavComp';
+import Blog from './pages/Blog';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path='/shop' element={<Shop />} />
           <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/mixed-media' element={<MixedMedia />} />
+          <Route exact path='/blog' element={<Blog />} />
         </Routes>
       </Router>
     </div>
