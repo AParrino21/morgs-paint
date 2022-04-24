@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import MixedMedia from './pages/MixedMedia';
 // import NavComp from './components/NavComp/NavComp';
 import Blog from './pages/Blog';
+import PrintsPage from './pages/PrintsPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/mixed-media' element={<MixedMedia />} />
           <Route exact path='/blog' element={<Blog />} />
+          <Route exact path='/prints' element={<PrintsPage />} />
         </Routes>
       </Router>
     </div>

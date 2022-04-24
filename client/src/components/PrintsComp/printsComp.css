@@ -1,0 +1,13 @@
+.prints-container {
+    text-align: center;
+}
+
+.prints {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.cover {
+    width: 100%;
+    max-width: 800px;
+}

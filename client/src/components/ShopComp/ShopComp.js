@@ -3,6 +3,7 @@ import NavComp from '../NavComp/NavComp'
 import './shopComp.css'
 import Promo1 from './images/promo1.jpg';
 import Promo2 from './images/promo2.jpg';
+import PrintCover from '../PrintsComp/images/genisis-prints/gen-print-multi-side.jpg'
 
 
 const ShopComp = () => {
@@ -24,7 +25,7 @@ const ShopComp = () => {
 
                     <div onClick={() => window.location.href = '/prints'}>
                         <div className='promo-container'>
-                            <img className='promo-imgs' src={Promo1} alt="prints" />
+                            <img className='promo-imgs' src={PrintCover} alt="prints" />
                         </div>
                         <br />
                         <h2 className='shop-titles' onClick={() => window.location.href = '/prints'}>Prints</h2>
