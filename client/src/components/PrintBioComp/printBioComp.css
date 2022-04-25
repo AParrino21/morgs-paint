@@ -1,0 +1,8 @@
+.print-bio-img-container {
+    display: flex;
+}
+
+.print-bio-img {
+    width: 80%;
+    max-width: 600px;
+}

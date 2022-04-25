@@ -9,6 +9,7 @@ import MixedMedia from './pages/MixedMedia';
 // import NavComp from './components/NavComp/NavComp';
 import Blog from './pages/Blog';
 import PrintsPage from './pages/PrintsPage';
+import PrintBioComp from './components/PrintBioComp/PrintBioComp';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path='/mixed-media' element={<MixedMedia />} />
           <Route exact path='/blog' element={<Blog />} />
           <Route exact path='/prints' element={<PrintsPage />} />
+          <Route exact path='/print-bio/:print' element={<PrintBioComp />} />
         </Routes>
       </Router>
     </div>
