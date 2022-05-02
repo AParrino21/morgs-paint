@@ -1,5 +1,15 @@
+.print-container {
+    text-align: center;
+    margin: 100px auto;
+}
+
+.print-name {
+    font-size: 60px;
+}
+
 .print-bio-img-container {
     display: flex;
+    padding: 50px;
 }
 
 .print-bio-img {
