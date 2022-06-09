@@ -24,6 +24,9 @@ const OilPaintingsBioComp = () => {
     return (
         <div>
             <div className='painting-bio-img-container'>
+                <button className='oil-btn' onClick={() => window.location.href = '/oilpaintings'}>BACK TO SHOP</button>
+                <br />
+                <br />
                 <img className='painting-bio-img' src={art.image} alt={clickedPainting[0].name} />
                 <br />
                 <br />
@@ -33,7 +36,7 @@ const OilPaintingsBioComp = () => {
                 <br />
                 <br />
                 <h2>{art.price} USD</h2>
-                <button onClick={addToCart}>ADD TO CART</button>
+                <button className='oil-btn' onClick={addToCart}>ADD TO CART</button>
             </div>
         </div>
     )

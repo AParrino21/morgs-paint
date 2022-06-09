@@ -7,8 +7,8 @@ const printsData = [
             require("../PrintsComp/images/reincar-prints/reincar-print-multi.jpg")
         ],
         "name": "reincarnation",
-        "bio": "bio of painting number 1",
-        "price": 50
+        "bio": '10" x 13"',
+        "price": 80
     },
     {
         "id": 2,
@@ -19,8 +19,8 @@ const printsData = [
             require("../PrintsComp/images/ser-prints/ser-print-multi.jpg")
         ],
         "name": "serendipity",
-        "bio": "bio of painting number 2",
-        "price": 40
+        "bio": '8" x 12"',
+        "price": 75
     },
     {
         "id": 3,
@@ -31,8 +31,8 @@ const printsData = [
             require("../PrintsComp/images/genisis-prints/gen-print-multi.jpg")
         ],
         "name": "genisis",
-        "bio": "bio of painting number 2",
-        "price": 40
+        "bio": '8" x 12"',
+        "price": 75
     },
     {
         "id": 4,
@@ -42,8 +42,8 @@ const printsData = [
             require("../PrintsComp/images/bee-prints/bee-print-multi.jpg")
         ],
         "name": "bee-queen",
-        "bio": "bio of painting number 2",
-        "price": 40
+        "bio": '8" x 10"',
+        "price": 50
     },
     {
         "id": 5,
@@ -54,8 +54,8 @@ const printsData = [
             require("../PrintsComp/images/breath-prints/breath-print-multi.jpg")
         ],
         "name": "breathe",
-        "bio": "bio of painting number 2",
-        "price": 40
+        "bio": '8" x 12"',
+        "price": 75
     },
     {
         "id": 6,
@@ -64,8 +64,8 @@ const printsData = [
             require("../PrintsComp/images/norma-prints/norma-print-multi.jpg")
         ],
         "name": "norma-jeane",
-        "bio": "bio of painting number 2",
-        "price": 40
+        "bio": '8" x 10"',
+        "price": 50
     },
     {
         "id": 7,
@@ -75,8 +75,8 @@ const printsData = [
             require("../PrintsComp/images/fox-prints/fox-print-multi.jpg")
         ],
         "name": "florida-foxtrot",
-        "bio": "bio of painting number 2",
-        "price": 40
+        "bio": '8" x 10"',
+        "price": 50
     },
     {
         "id": 8,
@@ -86,8 +86,8 @@ const printsData = [
             require("../PrintsComp/images/poppy-prints/poppy-print-multi.jpg")
         ],
         "name": "poppy",
-        "bio": "bio of painting number 2",
-        "price": 40
+        "bio": '8" x 12"',
+        "price": 75
     },
     {
         "id": 9,
@@ -98,8 +98,8 @@ const printsData = [
             require("../PrintsComp/images/maid-prints/maid-print-multi.jpg")
         ],
         "name": "maid-in-america",
-        "bio": "bio of painting number 2",
-        "price": 40
+        "bio": '8" x 10"',
+        "price": 50
     },
     {
         "id": 10,
@@ -110,8 +110,8 @@ const printsData = [
             require("../PrintsComp/images/whale-prints/whale-print-multi.jpg")
         ],
         "name": "whale",
-        "bio": "bio of painting number 2",
-        "price": 40
+        "bio": '8" x 10"',
+        "price": 50
     },
 
 ]

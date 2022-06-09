@@ -35,7 +35,7 @@ const PrintBioComp = () => {
                 </div>
                 <h3 className='print-bio'>{clickedPrint[0].bio}</h3>
                 <h4 className='print-price'>{clickedPrint[0].price} USD</h4>
-                <button id={clickedPrint[0].name} className='print-cart-btn' onClick={addToCart}>Add To Cart</button>
+                <button id={clickedPrint[0].name} className='print-cart-btn oil-btn' onClick={addToCart}>Add To Cart</button>
             </div>
         </div>
     )
