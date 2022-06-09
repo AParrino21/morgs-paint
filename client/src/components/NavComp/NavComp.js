@@ -20,17 +20,20 @@ const NavComp = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link to='/' className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}>HOME</Link>
-                            </li>
+                            </li> */}
                             <li className="nav-item">
-                                <Link to='/shop' className={location.pathname === '/shop' ? 'nav-link active' : 'nav-link'}>SHOP</Link>
+                                <Link to='/' className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}>SHOP</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to='/gallery' className={location.pathname === '/gallery' ? 'nav-link active' : 'nav-link'}>GALLERY</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to='/contact' className={location.pathname === '/contact' ? 'nav-link active' : 'nav-link'}>CONTACT</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to='/about' className={location.pathname === '/about' ? 'nav-link active' : 'nav-link'}>ABOUT ME</Link>
                             </li>
                             {/* <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
