@@ -1,17 +1,9 @@
 .mixed-media-container {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
     text-align: center;
-    margin: 100px 0 0 0;
 }
 
-.mixed-media {
-    padding: 100px;
-}
-
-.mixed-media-img {
+.mixed-img {
     width: 80%;
-    max-width: 600px;
+    max-width: 500px;
+    cursor: pointer;
 }
-
