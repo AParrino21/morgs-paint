@@ -27,4 +27,16 @@
     margin: auto 0;
     font-weight: 600;
     font-size: 25px;
+    color: black;
+    background-color: white;
+}
+
+.carousel-btn:hover {
+    font-size: 35px;
+}
+
+@media screen and (max-width: 800px) {
+    .print-name {
+        font-size: 35px;
+    }
 }
