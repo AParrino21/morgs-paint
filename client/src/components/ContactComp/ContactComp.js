@@ -9,7 +9,7 @@ const ContactComp = () => {
             <NavComp />
         </div>
         <div>
-            Contact
+            <h2>Contact me with additonal questions via email!</h2>
         </div>
     </div>
   )
