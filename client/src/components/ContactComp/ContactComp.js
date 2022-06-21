@@ -8,8 +8,8 @@ const ContactComp = () => {
         <div>
             <NavComp />
         </div>
-        <div>
-            <h2>Contact me with additonal questions via email!</h2>
+        <div style={{textAlign: 'center', padding: '100px'}}>
+            <h2>Contact me with additonal questions <a href='mailto:morganedanton@gmail.com'>HERE</a></h2>
         </div>
     </div>
   )
