@@ -39,7 +39,7 @@ const ShopComp = () => {
                     <h2 className='shop-titles' onClick={() => window.location.href = '/prints'}>Prints</h2>
                 </div>
 
-                <div onClick={() => window.location.href = 'https://www.SOCIETY6.com/morgandanton '}>
+                <div onClick={() => window.location.href = 'https://www.SOCIETY6.com/morgandanton'}>
                     <div className='promo-container'>
                         <img className='promo-imgs' src={Promo3b} alt="society 6" />
                     </div>

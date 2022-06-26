@@ -11,12 +11,12 @@ const ContactComp = () => {
         <NavComp />
       </div>
       <div style={{ textAlign: 'center', padding: '100px', minHeight: '63vh' }}>
-        <h2>Contact me with additonal questions <a href='mailto:morgandantonart@gmail.com'>HERE</a></h2>
+        <h2>Contact me with additonal questions at <br/> <a href='mailto:morgandantonart@gmail.com'>morgandantonart@gmail.com</a></h2>
         <br />
-        
+
         <div>
-          <PaletteIcon style={{ color: 'FFA386', fontSize: '30px' }} />
-          <BrushIcon style={{ color: '33DAFF', fontSize: '30px' }} />
+          <PaletteIcon style={{fontSize: '30px' }} />
+          <BrushIcon style={{fontSize: '30px' }} />
         </div>
       </div>
     </div>
