@@ -12,6 +12,7 @@ import OilPaintingsComp from './components/OilPaintingsComp/OilPaintingsComp';
 import OilPaintingsBioComp from './components/OilPaintingsBioComp/OilPaintingsBioComp';
 import MixedMediaBioComp from './components/MixedMediaComp/MixedMediaBio'
 import Footer from './components/FooterComp/Footer'
+import Cart from './components/CartComp/Cart'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route exact path='/oilpaintings' element={<OilPaintingsComp />} />
           <Route exact path='/oilpaintings/:oil' element={<OilPaintingsBioComp />} />
           <Route exact path='/mixed-media/:mixed' element={<MixedMediaBioComp />} />
+          <Route exact path='/cart' element={<Cart />} />
         </Routes>
         <Footer/>
       </Router>

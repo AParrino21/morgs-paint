@@ -5,7 +5,8 @@ const mixedData = [
         name: 'Golden Goddess',
         price: 8500,
         size: "30' x 40'",
-        bio: 'Oil on canvas with pressed dried flowers surrounded by wooden frame with gold leaf'
+        bio: 'Oil on canvas with pressed dried flowers surrounded by wooden frame with gold leaf',
+        priceData: 'price_1LEnRUElbRpz7PMDrEAudOgu'
     },
     {
         id: '2',

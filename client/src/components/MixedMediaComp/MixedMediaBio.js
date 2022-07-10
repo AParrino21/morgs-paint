@@ -19,7 +19,20 @@ const MixedMediaBio = () => {
     let art = clickedPainting[0]
 
     function addToCart() {
-        console.log('added to cart!')
+        let inCart = {
+            id: art.id,
+            name: art.name,
+            price: art.priceData,
+            quantity: 1
+        }
+
+        let storage = JSON.parse(localStorage.getItem('morgsArtCart'))
+        if (storage === null) {
+            storage = []
+        }
+
+        storage.push(inCart)
+        localStorage.setItem('morgsArtCart', JSON.stringify(storage))
     }
 
     return (
@@ -38,7 +51,7 @@ const MixedMediaBio = () => {
                 <h3 style={{ maxWidth: '400px', margin: '0 auto' }}>{art.bio}</h3>
                 <br/>
                 <h2>{art.price} USD</h2>
-                <button className='oil-btn' onClick={addToCart}>Add To Cart</button>
+                <button id={art.priceData ? art.priceData : ''} className='oil-btn' onClick={addToCart}>Add To Cart</button>
                 <br/>
                 <br/>
             </div>
