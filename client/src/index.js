@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { ArtProvider } from './contexts/ArtContext'
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ArtProvider>
+      <App />
+    </ArtProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

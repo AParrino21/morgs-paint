@@ -1,16 +1,41 @@
 const express = require('express');
-// const db = require('./config/connection');
-// const routes = require('./routes');
+const routes = require('./routes');
 const stripe = require('stripe')('sk_test_51LEnEdElbRpz7PMDLGNiydmgUq3Qr9qZieFKx9e8Mb6ad7kJaopvsLRonfdWA1ipFNZrVNPKv4CVJwFEx2Cj3isR00Bc1StOv0');
+const mongoose = require('mongoose')
+const cors = require('cors');
 
 const YOUR_DOMAIN = 'http://localhost:3000';
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+require('dotenv').config();
+
+const uri = process.env.DB;
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).then((e) => {
+  console.log("DB connected")
+})
+
+var whitelist = [
+  'http://localhost:3000',
+  'http://localhost:3001',
+];
+
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+// Define middleware here
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(routes);
+app.use(routes);
 
 // stripe checkout
 app.post('/create-checkout-session', async (req, res) => {
@@ -37,7 +62,7 @@ app.post('/create-checkout-session', async (req, res) => {
     mode: 'payment',
     success_url: `${YOUR_DOMAIN}?success=true`,
     cancel_url: `${YOUR_DOMAIN}?canceled=true`,
-    automatic_tax: {enabled: true},
+    automatic_tax: { enabled: true },
   });
 
   res.json({ url: session.url })
@@ -45,7 +70,7 @@ app.post('/create-checkout-session', async (req, res) => {
 // end stripe checkout
 
 // db.once('open', () => {
-  app.listen(PORT, () => {
-    console.log(`API server running on port ${PORT}!`);
-  });
+app.listen(PORT, () => {
+  console.log(`API server running on port ${PORT}!`);
+});
 // });
