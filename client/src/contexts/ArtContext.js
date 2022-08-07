@@ -16,6 +16,7 @@ export function ArtProvider(props) {
     try {
       const response = await axios.get('/api/paintings/oils')
       setOils(response.data)
+      console.log(response)
     } catch (error) {
       console.log(error)
     }
@@ -23,7 +24,7 @@ export function ArtProvider(props) {
 
   const getOneOil = async (id) => {
     try {
-      const response = await axios.get('/api/paintings/oils/' + id)
+      const response = await axios.get(process.env.REACT_APP_URL + '/api/paintings/oils/' + id)
       setOneOil(response.data)
     } catch (error) {
       console.log(error)
@@ -32,7 +33,7 @@ export function ArtProvider(props) {
 
   const getAllMixedMedia = async () => {
     try {
-      const response = await axios.get('/api/paintings/mixedmedia')
+      const response = await axios.get(process.env.REACT_APP_URL + '/api/paintings/mixedmedia')
       setMixedMedia(response.data)
     } catch (error) {
       console.log(error)
@@ -41,7 +42,7 @@ export function ArtProvider(props) {
 
   const getOneMixedMedia = async (id) => {
     try {
-      const response = await axios.get('/api/paintings/mixedmedia/' + id)
+      const response = await axios.get(process.env.REACT_APP_URL + '/api/paintings/mixedmedia/' + id)
       setOneMixedMedia(response.data)
     } catch (error) {
       console.log(error)
@@ -50,7 +51,7 @@ export function ArtProvider(props) {
 
   const getAllPrints = async () => {
     try {
-      const response = await axios.get('/api/paintings/prints')
+      const response = await axios.get(process.env.REACT_APP_URL + '/api/paintings/prints')
       setPrints(response.data)
     } catch (error) {
       console.log(error)
@@ -59,7 +60,7 @@ export function ArtProvider(props) {
 
   const getOnePrint = async (id) => {
     try {
-      const response = await axios.get('/api/paintings/prints/' + id)
+      const response = await axios.get(process.env.REACT_APP_URL + '/api/paintings/prints/' + id)
       setOnePrint(response.data)
     } catch (error) {
       console.log(error)
