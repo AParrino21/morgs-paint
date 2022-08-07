@@ -25,12 +25,12 @@ const OilPaintingsComp = () => {
                 <NavComp />
             </div>
             <div className='oilpainting-container'>
-                {/* {oils.map(art => (
+                {oils.map(art => (
                     <div key={Math.random()}>
                         <h1 className='oilpainting-name'>{art.name}</h1>
                         <img id={art._id} onClick={handleClick} className='oilpainting-img' src={art.image} alt="paintings" />
                     </div>
-                ))} */}
+                ))}
             </div>
         </div>
     )
