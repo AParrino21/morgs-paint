@@ -4,8 +4,6 @@ import './shopComp.css'
 import Promo1 from './images/promo1.jpg';
 import Promo2 from './images/promo2.jpg';
 import Promo3b from './images/promo3b.jpg';
-import PrintCover from '../PrintsComp/images/genisis-prints/gen-print-multi-side.jpg'
-
 
 const ShopComp = () => {
     return (
@@ -33,7 +31,7 @@ const ShopComp = () => {
 
                 <div onClick={() => window.location.href = '/prints'}>
                     <div className='promo-container'>
-                        <img className='promo-imgs' src={PrintCover} alt="prints" />
+                        <img className='promo-imgs' src='https://res.cloudinary.com/dys5xwlsm/image/upload/v1659741868/Prints/genisis-prints/gen-print-multi-side_skocam.jpg' alt="prints" />
                     </div>
                     <br />
                     <h2 className='shop-titles' onClick={() => window.location.href = '/prints'}>Prints</h2>

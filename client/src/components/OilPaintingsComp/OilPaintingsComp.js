@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import './oilPaintingsComp.css'
 import NavComp from '../NavComp/NavComp'
-import oilPaintingsData from './oilPaintingsData'
+import { useNavigate } from 'react-router-dom';
+
+import { ArtContext } from '../../contexts/ArtContext'
+
 
 const OilPaintingsComp = () => {
 
+    const navigate = useNavigate();
+    const { getAllOils, oils } = useContext(ArtContext)
+
+    useEffect(() => {
+        getAllOils()
+    }, [])
+
     function handleClick(e) {
-        window.location.href = '/oilpaintings/' + e.target.id
+        navigate('/oilpaintings/' + e.target.id)
     }
 
     return (
@@ -15,10 +25,10 @@ const OilPaintingsComp = () => {
                 <NavComp />
             </div>
             <div className='oilpainting-container'>
-                {oilPaintingsData.map(art => (
+                {oils.map(art => (
                     <div key={Math.random()}>
                         <h1 className='oilpainting-name'>{art.name}</h1>
-                        <img id={art.id} onClick={handleClick} className='oilpainting-img' src={art.image} alt="paintings" />
+                        <img id={art._id} onClick={handleClick} className='oilpainting-img' src={art.image} alt="paintings" />
                     </div>
                 ))}
             </div>

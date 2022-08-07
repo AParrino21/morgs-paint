@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const paintingsSchema = new Schema({
+const mixedMediaSchema = new Schema({
 
     name: {
         type: String,
         required: true
     },
 
-    image: {
+    src: {
         type: String,
         required:true
     },
@@ -18,7 +18,7 @@ const paintingsSchema = new Schema({
         required: true
     },
 
-    description: {
+    bio: {
         type: String,
         required: true
     },
@@ -39,6 +39,6 @@ const paintingsSchema = new Schema({
 
 });
 
-const Paintings = mongoose.model("paintings", paintingsSchema);
+const MixedMedia = mongoose.model("mixedMedia", mixedMediaSchema);
 
-module.exports = Paintings;
+module.exports = MixedMedia;

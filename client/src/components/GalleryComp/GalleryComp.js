@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react'
 import './galleryComp.css';
 import NavComp from '../NavComp/NavComp';
-import Oils from '../OilPaintingsComp/oilPaintingsData'
-import Mixed from '../MixedMediaComp/MixedMediaData'
+
+import { ArtContext } from '../../contexts/ArtContext'
+
 
 const GalleryComp = () => {
 
-  console.log(Mixed)
+  const { getAllOils, oils, getAllMixedMedia, mixedMedia } = useContext(ArtContext)
+
+  useEffect(() => {
+      getAllOils()
+      getAllMixedMedia()
+  }, [])
+
 
   return (
     <div>
@@ -14,21 +21,21 @@ const GalleryComp = () => {
         <NavComp />
       </div>
       <div className='oilpainting-container'>
-        {Mixed.map(mix => (
-          <div key={mix.id}>
+        {mixedMedia.map(mix => (
+          <div key={mix._id}>
             <h1 className='oilpainting-name'>{mix.name}</h1>
             <p>{mix.bio}</p>
             <p>{mix.size}</p>
-            <img id={mix.id} className='oilpainting-img' src={mix.src} alt="paintings" />
+            <img id={mix._id} className='oilpainting-img' src={mix.src} alt="paintings" />
           </div>
         ))}
 
-        {Oils.map(art => (
-          <div key={Math.random()}>
+        {oils.map(art => (
+          <div key={art._id}>
             <h1 className='oilpainting-name'>{art.name}</h1>
             <p>{art.description}</p>
             <p>{art.size}</p>
-            <img id={art.id} className='oilpainting-img' src={art.image} alt="paintings" />
+            <img id={art._id} className='oilpainting-img' src={art.image} alt="paintings" />
           </div>
         ))}
       </div>

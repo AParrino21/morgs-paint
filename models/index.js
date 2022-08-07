@@ -1,3 +1,5 @@
 module.exports = {
-    Paintings: require("./paintings")
+    Paintings: require("./paintings"),
+    MixedMedia: require("./mixedMedia"),
+    Prints: require("./prints")
   };

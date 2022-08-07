@@ -1,21 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import './oilPaintingBioComp.css'
 import { useLocation } from 'react-router-dom'
-import oilPaintingsData from '../OilPaintingsComp/oilPaintingsData';
+
+import { ArtContext } from '../../contexts/ArtContext'
+
 
 const OilPaintingsBioComp = () => {
 
+    const { getOneOil, oneOil } = useContext(ArtContext)
+
+    useEffect(() => {
+        let path = location.pathname.split('/')
+        getOneOil(path[2])
+    }, [])
+
     const location = useLocation();
-
-    let path = location.pathname.split('/')
-
-    console.log(path[2]);
-
-    let clickedPainting = oilPaintingsData.filter(painting => painting.id === parseInt(path[2]))
-
-    console.log(clickedPainting)
-
-    let art = clickedPainting[0]
 
     function addToCart() {
         console.log('added to cart!')
@@ -27,16 +26,17 @@ const OilPaintingsBioComp = () => {
                 <button className='oil-btn' onClick={() => window.location.href = '/oilpaintings'}>BACK TO SHOP</button>
                 <br />
                 <br />
-                <img className='painting-bio-img' src={art.image} alt={clickedPainting[0].name} />
+                <img className='painting-bio-img' src={oneOil.image} alt={oneOil.name} />
                 <br />
                 <br />
-                <h1>{art.name}</h1>
-                <h2>{art.size}</h2>
-                <h2>{art.description}</h2>
+                <h1>{oneOil.name}</h1>
+                <h2>{oneOil.size}</h2>
+                <h2>{oneOil.description}</h2>
                 <br />
                 <br />
-                <h2>{art.price} USD</h2>
-                <button className='oil-btn' onClick={addToCart}>ADD TO CART</button>
+                <h2>{oneOil.price} USD</h2>
+                {oneOil.inventory != 0 ? <button className='oil-btn' onClick={addToCart}>ADD TO CART</button> : <p style={{ color: 'red' }}>SOLD OUT</p>}
+
             </div>
         </div>
     )
