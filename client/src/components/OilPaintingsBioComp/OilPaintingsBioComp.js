@@ -7,7 +7,7 @@ import { ArtContext } from '../../contexts/ArtContext'
 
 const OilPaintingsBioComp = () => {
 
-    const { getOneOil, oneOil } = useContext(ArtContext)
+    const { getOneOil, oneOil, addToCart } = useContext(ArtContext)
 
     useEffect(() => {
         let path = location.pathname.split('/')
@@ -15,10 +15,6 @@ const OilPaintingsBioComp = () => {
     }, [])
 
     const location = useLocation();
-
-    function addToCart() {
-        console.log('added to cart!')
-    }
 
     return (
         <div>
@@ -35,7 +31,7 @@ const OilPaintingsBioComp = () => {
                 <br />
                 <br />
                 <h2>{oneOil.price} USD</h2>
-                {oneOil.inventory != 0 ? <button className='oil-btn' onClick={addToCart}>ADD TO CART</button> : <p style={{ color: 'red' }}>SOLD OUT</p>}
+                {oneOil.inventory != 0 ? <button id={oneOil._id} className='oil-btn' onClick={() => addToCart(oneOil)}>ADD TO CART</button> : <p style={{ color: 'red' }}>SOLD OUT</p>}
 
             </div>
         </div>

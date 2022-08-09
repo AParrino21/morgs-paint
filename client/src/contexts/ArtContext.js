@@ -12,12 +12,13 @@ export function ArtProvider(props) {
   const [onePrint, setOnePrint] = useState({})
   const [oneMixedMedia, setOneMixedMedia] = useState({})
 
+  // const URL = process.env.REACT_APP_URL_PRO
+  const URL = process.env.REACT_APP_URL
+
   const getAllOils = async () => {
     try {
-      const response = await axios.get(process.env.REACT_APP_URL_PRO + '/api/paintings/oils')
+      const response = await axios.get(URL + '/api/paintings/oils')
       setOils(response.data)
-      console.log(response)
-      console.log(response.data)
     } catch (error) {
       console.log(error)
     }
@@ -25,7 +26,7 @@ export function ArtProvider(props) {
 
   const getOneOil = async (id) => {
     try {
-      const response = await axios.get(process.env.REACT_APP_URL_PRO + '/api/paintings/oils/' + id)
+      const response = await axios.get(URL + '/api/paintings/oils/' + id)
       setOneOil(response.data)
     } catch (error) {
       console.log(error)
@@ -34,7 +35,7 @@ export function ArtProvider(props) {
 
   const getAllMixedMedia = async () => {
     try {
-      const response = await axios.get(process.env.REACT_APP_URL_PRO + '/api/paintings/mixedmedia')
+      const response = await axios.get(URL + '/api/paintings/mixedmedia')
       setMixedMedia(response.data)
     } catch (error) {
       console.log(error)
@@ -43,7 +44,7 @@ export function ArtProvider(props) {
 
   const getOneMixedMedia = async (id) => {
     try {
-      const response = await axios.get(process.env.REACT_APP_URL_PRO + '/api/paintings/mixedmedia/' + id)
+      const response = await axios.get(URL + '/api/paintings/mixedmedia/' + id)
       setOneMixedMedia(response.data)
     } catch (error) {
       console.log(error)
@@ -52,7 +53,7 @@ export function ArtProvider(props) {
 
   const getAllPrints = async () => {
     try {
-      const response = await axios.get(process.env.REACT_APP_URL_PRO + '/api/paintings/prints')
+      const response = await axios.get(URL + '/api/paintings/prints')
       setPrints(response.data)
     } catch (error) {
       console.log(error)
@@ -61,11 +62,20 @@ export function ArtProvider(props) {
 
   const getOnePrint = async (id) => {
     try {
-      const response = await axios.get(process.env.REACT_APP_URL_PRO + '/api/paintings/prints/' + id)
+      const response = await axios.get(URL + '/api/paintings/prints/' + id)
       setOnePrint(response.data)
     } catch (error) {
       console.log(error)
     }
+  }
+
+  function addToCart(clickedItem) {
+    let storage = JSON.parse(localStorage.getItem('morgsArtCart'))
+    if (storage === null) {
+      storage = []
+    }
+    storage.push(clickedItem)
+    localStorage.setItem('morgsArtCart', JSON.stringify(storage))
   }
 
   return (
@@ -82,7 +92,8 @@ export function ArtProvider(props) {
         onePrint,
         getOnePrint,
         oneMixedMedia,
-        getOneMixedMedia
+        getOneMixedMedia,
+        addToCart
       }}>
       {props.children}
     </ArtContext.Provider>

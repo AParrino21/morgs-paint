@@ -7,29 +7,12 @@ import { ArtContext } from '../../contexts/ArtContext'
 const MixedMediaBio = () => {
 
     const location = useLocation();
-    const { getOneMixedMedia, oneMixedMedia } = useContext(ArtContext)
+    const { getOneMixedMedia, oneMixedMedia, addToCart } = useContext(ArtContext)
 
     useEffect(() => {
         let path = location.pathname.split('/')
         getOneMixedMedia(path[2])
     }, [])
-
-    function addToCart() {
-        let inCart = {
-            id: oneMixedMedia._id,
-            name: oneMixedMedia.name,
-            price: oneMixedMedia.priceData,
-            quantity: 1
-        }
-
-        let storage = JSON.parse(localStorage.getItem('morgsArtCart'))
-        if (storage === null) {
-            storage = []
-        }
-
-        storage.push(inCart)
-        localStorage.setItem('morgsArtCart', JSON.stringify(storage))
-    }
 
     return (
         <div>
@@ -47,11 +30,11 @@ const MixedMediaBio = () => {
                 <br />
                 <h3>{oneMixedMedia.size}</h3>
                 <h3 style={{ maxWidth: '400px', margin: '0 auto' }}>{oneMixedMedia.bio}</h3>
-                <br/>
+                <br />
                 <h2>{oneMixedMedia.price} USD</h2>
-                <button id={oneMixedMedia.priceData ? oneMixedMedia.priceData : ''} className='oil-btn' onClick={addToCart}>Add To Cart</button>
-                <br/>
-                <br/>
+                <button id={oneMixedMedia.priceData ? oneMixedMedia.priceData : ''} className='oil-btn' onClick={() => addToCart(oneMixedMedia)}>Add To Cart</button>
+                <br />
+                <br />
             </div>
         </div>
     )

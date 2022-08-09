@@ -7,7 +7,7 @@ import { ArtContext } from '../../contexts/ArtContext'
 
 const PrintBioComp = () => {
 
-    const { getOnePrint, onePrint } = useContext(ArtContext)
+    const { getOnePrint, onePrint, addToCart } = useContext(ArtContext)
     const [currentImg, setCurrentImg] = useState(0)
 
     useEffect(() => {
@@ -16,10 +16,6 @@ const PrintBioComp = () => {
     }, [])
 
     const location = useLocation();
-
-    function addToCart(e) {
-        console.log(e.target.id)
-    }
 
     function nextImg() {
         if (currentImg === onePrint.src.length - 1) {
@@ -37,6 +33,18 @@ const PrintBioComp = () => {
         }
     }
 
+    function createPrintObj(print, ind) {
+        let printObj = {
+            _id: print.src[ind].image,
+            name: print.name,
+            bio: print.bio,
+            src: print.src[ind].image,
+            price: print.price
+        }
+
+        addToCart(printObj)
+    }
+
     return (
         <div>
             <NavComp />
@@ -44,12 +52,12 @@ const PrintBioComp = () => {
                 <h1 className='print-name'>{onePrint.name}</h1>
                 <div className='print-bio-img-container'>
                     <button className='carousel-btn' onClick={prevImg}>&lt;</button>
-                    <img className='print-bio-img' src={onePrint.src &&onePrint.src[currentImg].image} alt='prints' />
+                    <img className='print-bio-img' src={onePrint.src && onePrint.src[currentImg].image} alt='prints' />
                     <button className='carousel-btn' onClick={nextImg}>&gt;</button>
                 </div>
                 <h3 className='print-bio'>{onePrint.bio}</h3>
                 <h4 className='print-price'>{onePrint.price} USD</h4>
-                <button id={onePrint._id} className='print-cart-btn oil-btn' onClick={addToCart}>Add To Cart</button>
+                <button id={onePrint._id} className='print-cart-btn oil-btn' onClick={() => createPrintObj(onePrint, currentImg)}>Add To Cart</button>
             </div>
         </div>
     )
