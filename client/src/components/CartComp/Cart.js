@@ -7,6 +7,8 @@ const Cart = () => {
     const [cartTotalPrice, setCartTotalPrice] = useState()
     let storage = JSON.parse(localStorage.getItem('morgsArtCart'))
 
+    const URL = process.env.REACT_APP_URL_PRO
+
     useEffect(() => {
         setCartItems(storage)
     }, [])
@@ -16,7 +18,7 @@ const Cart = () => {
     }, [cartItem])
 
     function checkOutNow() {
-        fetch('/create-checkout-session', {
+        fetch(URL + '/create-checkout-session', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

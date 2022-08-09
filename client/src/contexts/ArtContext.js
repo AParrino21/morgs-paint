@@ -12,8 +12,8 @@ export function ArtProvider(props) {
   const [onePrint, setOnePrint] = useState({})
   const [oneMixedMedia, setOneMixedMedia] = useState({})
 
-  // const URL = process.env.REACT_APP_URL_PRO
-  const URL = process.env.REACT_APP_URL
+  const URL = process.env.REACT_APP_URL_PRO
+  // const URL = process.env.REACT_APP_URL
 
   const getAllOils = async () => {
     try {
