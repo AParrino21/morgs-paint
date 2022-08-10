@@ -2,10 +2,13 @@ import React from 'react';
 import './navComp.css';
 import { Link, useLocation } from 'react-router-dom'
 import NavHeader from './morganNavHeader.JPG'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const NavComp = () => {
 
     const location = useLocation()
+
+    let storage = JSON.parse(localStorage.getItem('morgsArtCart'))
 
     return (
         <div>
@@ -35,15 +38,10 @@ const NavComp = () => {
                             <li className="nav-item">
                                 <Link to='/about' className={location.pathname === '/about' ? 'nav-link active' : 'nav-link'}>ABOUT ME</Link>
                             </li>
-                            {/* <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    DROPDOWN</a>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li> */}
+                            <li className="nav-item cart-nav-item">
+                                {storage === null || storage && storage.length === 0 ? <Link to='/cart' className='nav-link'><ShoppingCartIcon/></Link> : <Link to='/cart' className='nav-link'><ShoppingCartIcon/><span className='cart-nav-item'><p className='item-in-cart'>{storage.length}</p></span></Link>}
+                                
+                            </li>
                         </ul>
                     </div>
                 </div>

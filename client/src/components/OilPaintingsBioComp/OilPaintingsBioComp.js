@@ -7,7 +7,7 @@ import { ArtContext } from '../../contexts/ArtContext'
 
 const OilPaintingsBioComp = () => {
 
-    const { getOneOil, oneOil, addToCart } = useContext(ArtContext)
+    const { getOneOil, oneOil, addToCart, isInCart, addedToCart } = useContext(ArtContext)
 
     useEffect(() => {
         let path = location.pathname.split('/')
@@ -31,8 +31,8 @@ const OilPaintingsBioComp = () => {
                 <br />
                 <br />
                 <h2>{oneOil.price} USD</h2>
-                {oneOil.inventory != 0 ? <button id={oneOil._id} className='oil-btn' onClick={() => addToCart(oneOil)}>ADD TO CART</button> : <p style={{ color: 'red' }}>SOLD OUT</p>}
-
+                {oneOil.inventory != 0 && isInCart(oneOil) === false ? <button id={oneOil._id} className='oil-btn' onClick={() => addToCart(oneOil)}>ADD TO CART</button> : isInCart(oneOil) === true ? <p style={{ color: 'red' }}>IN CART</p> : <p style={{ color: 'red' }}>SOLD OUT</p>}
+                <p style={{color: 'green'}}>{addedToCart}</p>
             </div>
         </div>
     )

@@ -29,13 +29,13 @@ const ShopComp = () => {
                     <h2 className='shop-titles' onClick={() => window.location.href = '/mixed-media'}>Mixed Media</h2>
                 </div>
 
-                <div onClick={() => window.location.href = '/prints'}>
+                {/* <div onClick={() => window.location.href = '/prints'}>
                     <div className='promo-container'>
                         <img className='promo-imgs' src='https://res.cloudinary.com/dys5xwlsm/image/upload/v1659741868/Prints/genisis-prints/gen-print-multi-side_skocam.jpg' alt="prints" />
                     </div>
                     <br />
                     <h2 className='shop-titles' onClick={() => window.location.href = '/prints'}>Prints</h2>
-                </div>
+                </div> */}
 
                 <div onClick={() => window.location.href = 'https://www.SOCIETY6.com/morgandanton'}>
                     <div className='promo-container'>

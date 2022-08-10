@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 // import config from '../config/config'
 import axios from 'axios';
 
@@ -11,6 +11,7 @@ export function ArtProvider(props) {
   const [oneOil, setOneOil] = useState({})
   const [onePrint, setOnePrint] = useState({})
   const [oneMixedMedia, setOneMixedMedia] = useState({})
+  const [addedToCart, setAddedToCart] = useState('')
 
   const URL = process.env.REACT_APP_URL_PRO
   // const URL = process.env.REACT_APP_URL
@@ -76,6 +77,16 @@ export function ArtProvider(props) {
     }
     storage.push(clickedItem)
     localStorage.setItem('morgsArtCart', JSON.stringify(storage))
+    setAddedToCart('Added to Cart!')
+  }
+
+  function isInCart(clickedItem) {
+    let storage = JSON.parse(localStorage.getItem('morgsArtCart'))
+    let inCart =  storage.filter(item => item._id === clickedItem._id)
+    if (inCart.length !== 0) {
+      return true
+    }
+    return false
   }
 
   return (
@@ -93,7 +104,9 @@ export function ArtProvider(props) {
         getOnePrint,
         oneMixedMedia,
         getOneMixedMedia,
-        addToCart
+        addToCart,
+        isInCart,
+        addedToCart
       }}>
       {props.children}
     </ArtContext.Provider>
