@@ -32,8 +32,6 @@ const MixedMediaBio = () => {
                 <h3 style={{ maxWidth: '400px', margin: '0 auto' }}>{oneMixedMedia.bio}</h3>
                 <br />
                 <h2>{oneMixedMedia.price} USD</h2>
-                {/* <button id={oneMixedMedia.priceData ? oneMixedMedia.priceData : ''} className='oil-btn' onClick={() => addToCart(oneMixedMedia)}>Add To Cart</button> */}
-
                 {oneMixedMedia.inventory != 0 && isInCart(oneMixedMedia) === false ? <button id={oneMixedMedia._id} className='oil-btn' onClick={() => addToCart(oneMixedMedia)}>ADD TO CART</button> : isInCart(oneMixedMedia) === true ? <p style={{ color: 'red' }}>IN CART</p> : <p style={{ color: 'red' }}>SOLD OUT</p>}
                 <p style={{ color: 'green' }}>{addedToCart}</p>
                 <br />

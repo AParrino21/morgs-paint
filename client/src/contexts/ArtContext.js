@@ -1,5 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
-// import config from '../config/config'
+import React, { createContext, useState } from 'react';
 import axios from 'axios';
 
 export const ArtContext = createContext()
@@ -14,7 +13,6 @@ export function ArtProvider(props) {
   const [addedToCart, setAddedToCart] = useState('')
 
   const URL = process.env.REACT_APP_URL_PRO
-  // const URL = process.env.REACT_APP_URL
 
   const getAllOils = async () => {
     try {
@@ -70,6 +68,14 @@ export function ArtProvider(props) {
     }
   }
 
+  const subtractInventory = async (data) => {
+    try {
+      const response = await axios.put(URL + '/api/paintings/subtract', data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   function addToCart(clickedItem) {
     let storage = JSON.parse(localStorage.getItem('morgsArtCart'))
     if (storage === null) {
@@ -82,7 +88,22 @@ export function ArtProvider(props) {
 
   function isInCart(clickedItem) {
     let storage = JSON.parse(localStorage.getItem('morgsArtCart'))
-    let inCart =  storage.filter(item => item._id === clickedItem._id)
+    if(storage === null || storage.length === 0) {
+      return false
+    }
+    let inCart = storage.filter(item => item._id === clickedItem._id)
+    if (inCart.length !== 0) {
+      return true
+    }
+    return false
+  }
+
+  function printIsInCart(clickedItem) {
+    let storage = JSON.parse(localStorage.getItem('morgsArtCart'))
+    if(storage === null || storage.length === 0) {
+      return false
+    }
+    let inCart = storage.filter(item => item.src === clickedItem)
     if (inCart.length !== 0) {
       return true
     }
@@ -106,7 +127,10 @@ export function ArtProvider(props) {
         getOneMixedMedia,
         addToCart,
         isInCart,
-        addedToCart
+        addedToCart,
+        setAddedToCart,
+        subtractInventory,
+        printIsInCart
       }}>
       {props.children}
     </ArtContext.Provider>

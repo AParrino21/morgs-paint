@@ -71,7 +71,7 @@ const Cart = () => {
                             <button id={art._id} onClick={(e) => removeFromCart(e)}>Remove Item</button>
                         </div>
                     ))}
-                    <div>Cart Total: {cartTotalPrice && cartTotalPrice}</div>
+                    <div>Cart Total: ${cartTotalPrice && cartTotalPrice}</div>
                     <br />
                     <button onClick={checkOutNow}>Checkout</button>
                 </div>

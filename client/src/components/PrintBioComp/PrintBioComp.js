@@ -7,7 +7,7 @@ import { ArtContext } from '../../contexts/ArtContext'
 
 const PrintBioComp = () => {
 
-    const { getOnePrint, onePrint, addToCart } = useContext(ArtContext)
+    const { getOnePrint, onePrint, addToCart, printIsInCart, addedToCart, setAddedToCart } = useContext(ArtContext)
     const [currentImg, setCurrentImg] = useState(0)
 
     useEffect(() => {
@@ -15,9 +15,14 @@ const PrintBioComp = () => {
         getOnePrint(path[2])
     }, [])
 
+    useEffect(() => {
+
+    }, [])
+
     const location = useLocation();
 
     function nextImg() {
+        setAddedToCart('')
         if (currentImg === onePrint.src.length - 1) {
             setCurrentImg(0)
         } else {
@@ -26,6 +31,7 @@ const PrintBioComp = () => {
     }
 
     function prevImg() {
+        setAddedToCart('')
         if (currentImg === 0) {
             setCurrentImg(onePrint.src.length - 1)
         } else {
@@ -36,12 +42,20 @@ const PrintBioComp = () => {
     function createPrintObj(print, ind) {
         let printObj = {
             _id: print.src[ind].image,
+            objId: print._id,
             name: print.name,
             bio: print.bio,
             src: print.src[ind].image,
-            price: print.price
+            image_id: print.src[ind].image_id,
+            inventory: print.src[ind].inventory,
+            price: print.price,
+            cat: 'prints',
+            srcUpdate: [{
+                image: print.src[ind].image,
+                image_id: print.src[ind].image_id,
+                inventory: print.src[ind].inventory - 1
+            }],
         }
-
         addToCart(printObj)
     }
 
@@ -57,7 +71,9 @@ const PrintBioComp = () => {
                 </div>
                 <h3 className='print-bio'>{onePrint.bio}</h3>
                 <h4 className='print-price'>{onePrint.price} USD</h4>
-                <button id={onePrint._id} className='print-cart-btn oil-btn' onClick={() => createPrintObj(onePrint, currentImg)}>Add To Cart</button>
+
+                {onePrint.src && onePrint.src[currentImg].inventory !== 0 && printIsInCart(onePrint.src && onePrint.src[currentImg].image) === false ? <button id={onePrint._id} className='oil-btn' onClick={() => createPrintObj(onePrint, currentImg)}>ADD TO CART</button> : printIsInCart(onePrint.src && onePrint.src[currentImg].image) === true ? <p style={{ color: 'red' }}>IN CART</p> : <p style={{ color: 'red' }}>SOLD OUT</p>}
+                <p style={{ color: 'green' }}>{addedToCart}</p>
             </div>
         </div>
     )
