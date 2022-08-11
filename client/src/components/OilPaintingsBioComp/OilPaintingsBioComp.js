@@ -7,11 +7,12 @@ import { ArtContext } from '../../contexts/ArtContext'
 
 const OilPaintingsBioComp = () => {
 
-    const { getOneOil, oneOil, addToCart, isInCart, addedToCart } = useContext(ArtContext)
+    const { getOneOil, oneOil, addToCart, isInCart, addedToCart, setAddedToCart } = useContext(ArtContext)
 
     useEffect(() => {
         let path = location.pathname.split('/')
         getOneOil(path[2])
+        setAddedToCart('')
     }, [])
 
     const location = useLocation();

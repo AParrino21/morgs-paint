@@ -7,11 +7,12 @@ import { ArtContext } from '../../contexts/ArtContext'
 const MixedMediaBio = () => {
 
     const location = useLocation();
-    const { getOneMixedMedia, oneMixedMedia, addToCart, isInCart, addedToCart } = useContext(ArtContext)
+    const { getOneMixedMedia, oneMixedMedia, addToCart, isInCart, addedToCart, setAddedToCart } = useContext(ArtContext)
 
     useEffect(() => {
         let path = location.pathname.split('/')
         getOneMixedMedia(path[2])
+        setAddedToCart('')
     }, [])
 
     return (
