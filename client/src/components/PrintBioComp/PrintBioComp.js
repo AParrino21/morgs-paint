@@ -13,6 +13,7 @@ const PrintBioComp = () => {
     useEffect(() => {
         let path = location.pathname.split('/')
         getOnePrint(path[2])
+        setAddedToCart('')
     }, [])
 
     useEffect(() => {
