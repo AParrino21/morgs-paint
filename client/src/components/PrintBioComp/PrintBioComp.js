@@ -49,7 +49,7 @@ const PrintBioComp = () => {
             image_id: print.src[ind].image_id,
             inventory: print.src[ind].inventory,
             price: print.price,
-            price_id:print[src].price_id,
+            price_id:print[ind].price_id,
             cat: 'prints',
             srcUpdate: [{
                 image: print.src[ind].image,
